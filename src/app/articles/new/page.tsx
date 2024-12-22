@@ -18,18 +18,19 @@ const CreateBlogPage = () => {
     e.preventDefault();
     setLoading(true);
 
-    await createArticle(id, title, content);
+    /** json server */
+    // await createArticle(id, title, content);
 
-    // const newArtilce = await fetch(`${API_URL}/api`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ id, title, content }),
-    // });
-
-    // console.log("new article");
-    // console.log(newArtilce);
+    /**  supabase */
+    const API_URL= process.env.NEXT_PUBLIC_API_URL
+    // await fetch(`${API_URL}/api/create`, {
+    await fetch(`${API_URL}/api/blog`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({id, title, content})
+    })
 
     setLoading(false);
     router.push("/");

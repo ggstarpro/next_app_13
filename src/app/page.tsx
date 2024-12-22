@@ -1,11 +1,20 @@
 import Image from "next/image";
 import ArticleList from "./components/ArticleList";
 import { getAllArticles } from "@/blogAPI";
+import { supabase } from "@/utils/supabaseClient";
 // import { useEffect } from "react";
 
 export default async function Home() {
-  const articles = await getAllArticles();
-  console.log(articles);
+  /** json server */
+  // const articles = await getAllArticles();
+  // console.log(articles);
+
+  /**  supabase (SSR) */
+  const API_URL= process.env.NEXT_PUBLIC_API_URL
+  const res = await fetch(`${API_URL}/api/blog`, {
+    cache: "no-store"
+  })
+  const articles = await res.json();
 
   // clientコンポーネントの場合
   // 初回読み込みが遅くなるCSR
@@ -14,7 +23,6 @@ export default async function Home() {
   //     const articles = await fetch("");
   //   }
   // }, [])
-
 
   return (
     <div className="md:flex">

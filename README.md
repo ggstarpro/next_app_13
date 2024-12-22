@@ -34,3 +34,29 @@ Creating a new Next.js app in /Users/gm/Desktop/PG/next_app_13.
 * SSG
 * SSR
 * ISR
+
+
+# [Supabase](https://supabase.com/docs/reference/javascript/installing)
+*  new project
+```
+procject name: nextjs13-blog-udemy
+Database Password: XXX
+Region: Tokyo
+```
+* Project API Keys
+* npm install @supabase/supabase-js
+* Create a new table
+
+```
+* Name: posts
+
+id: text
+title: text
+content: text
+createdAt: timestamp now()
+```
+* insert row
+```
+適当に
+```
+* Disable RLS
