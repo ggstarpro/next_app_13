@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": "test",
+      "title": "test",
+      "content": "test",
+      "createdAt": "2023-07-31T07:03:46.953Z"
+    },
+    {
+      "id": "1",
+      "title": "2",
+      "content": "3",
+      "currentDateTime": "2024-12-19T15:50:27.187Z"
+    }
+  ]
+}
